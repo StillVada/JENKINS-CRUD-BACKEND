@@ -1,0 +1,54 @@
+# Build outputs
+bin/
+obj/
+out/
+
+# .NET Core
+*.user
+*.tmp
+*.temp
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.suo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test results
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+*.coverage
+
+# User secrets
+secrets.json
+
+# Database files
+*.mdf
+*.ldf
+*.bak
+
+# Docker
+.dockerignore
+
+# Environment files
+.env
+.env.local
+
+# Windows
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
