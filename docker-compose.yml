@@ -6,14 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8081:80"
-      - "8443:443"
+      - "8081:80"  # Оставляем только HTTP порт
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80;https://+:443
-      # Используйте один из этих вариантов:
-      # Вариант 1 (рекомендуется): host.docker.internal
-      - ConnectionStrings__DefaultConnection=Server=172.17.0.1;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;;
-      
-      # Вариант 2: IP хоста в сети Docker (обычно 172.17.0.1)
-      # - ConnectionStrings__DefaultConnection=Server=172.17.0.1;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
+      - ASPNETCORE_URLS=http://+:80  # Убираем HTTPS!
+      - ConnectionStrings__DefaultConnection=Server=host.docker.internal;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
