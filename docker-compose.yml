@@ -13,7 +13,7 @@ services:
       - ASPNETCORE_URLS=http://+:80;https://+:443
       # Используйте один из этих вариантов:
       # Вариант 1 (рекомендуется): host.docker.internal
-      - ConnectionStrings__DefaultConnection=Server=host.docker.internal;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
+      - ConnectionStrings__DefaultConnection=Server=172.17.0.1;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;;
       
       # Вариант 2: IP хоста в сети Docker (обычно 172.17.0.1)
       # - ConnectionStrings__DefaultConnection=Server=172.17.0.1;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
