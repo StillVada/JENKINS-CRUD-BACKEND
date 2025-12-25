@@ -11,15 +11,9 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80;https://+:443
-      - ConnectionStrings__DefaultConnection=Server=http:5.129.194.147;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
-    depends_on:
-      - db
-    networks:
-      - crud-api-network
-
-volumes:
-  sqlserver_data:
-
-networks:
-  crud-api-network:
-    driver: bridge
+      # Используйте один из этих вариантов:
+      # Вариант 1 (рекомендуется): host.docker.internal
+      - ConnectionStrings__DefaultConnection=Server=host.docker.internal;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
+      
+      # Вариант 2: IP хоста в сети Docker (обычно 172.17.0.1)
+      # - ConnectionStrings__DefaultConnection=Server=172.17.0.1;Database=CrudApiDb;User Id=sa;Password=Mypassword1;TrustServerCertificate=True;
